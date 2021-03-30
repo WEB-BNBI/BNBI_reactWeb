@@ -1,9 +1,5 @@
 import { Layout, Menu } from 'antd';
 import {
-    UserOutlined,
-    VideoCameraOutlined,
-    UploadOutlined,
-    AppstoreOutlined,
     BookOutlined
 } from '@ant-design/icons';
 import './Sider.css';
