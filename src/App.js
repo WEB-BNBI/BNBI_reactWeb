@@ -3,47 +3,42 @@ import { Route, Switch } from "react-router-dom";
 import './App.css';
 import FirstPage from "./component/firstpage/FirstPage.js";
 import SecondPage from "./component/secondpage/SecondPage.js";
-import Slide from './component/utility/Sider/Sider.js'
-import { Layout } from 'antd';
-import {
-  MenuUnfoldOutlined,
-  MenuFoldOutlined,
-} from '@ant-design/icons';
-
-const { Header, Content } = Layout;
+import notePage from "./component/notepage/note/note.js";
+import LayoutUT from './component/utility/layout/layout.js'
 
 function App() {
-  const [isOpen, setIsOpen] = useState(false);
-
+  const routeList=[
+    {
+      path:"/",
+      component:FirstPage,
+      exact:true,
+      slide:true
+    },
+    {
+      path:"/sec",
+      component:SecondPage,
+      exact:false,
+      slide:true
+    },
+    {
+      path:"/note",
+      component:notePage,
+      exact:true,
+      slide:true
+    },
+  ]
+  
+  var route = routeList.map(function(tmp) {
+    var routeTmp= <Route key={tmp.path} exact={tmp.exact} path={tmp.path} component={tmp.component} /> 
+    if(tmp.slide==true){
+      return <LayoutUT menu={routeTmp}/>
+    }
+    return routeTmp
+});
   return (
-    <Layout style={{ minHeight: '100vh' }}>
-      <Slide
-        isOpen={isOpen}
-      />
-      <Layout className="site-layout">
-        <Header className="site-layout-background" style={{ padding: 0 }}>
-          {React.createElement(isOpen ? MenuUnfoldOutlined : MenuFoldOutlined, {
-            className: 'trigger',
-            onClick: () => {
-              setIsOpen(!isOpen);
-            }
-          })}
-        </Header>
-        <Content
-          className="site-layout-background"
-          style={{
-            margin: '24px 16px',
-            padding: 24,
-            minHeight: 280,
-          }}
-        >
           <Switch>
-            <Route exact path="/" component={FirstPage} />
-            <Route path="/sec" component={SecondPage} />
+           {route}
           </Switch>
-        </Content>
-      </Layout>
-    </Layout>
   );
 }
 
