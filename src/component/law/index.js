@@ -1,4 +1,3 @@
-import './FirstPage.css';
 const FirstPage = () => {
     return (
         <>hello</>

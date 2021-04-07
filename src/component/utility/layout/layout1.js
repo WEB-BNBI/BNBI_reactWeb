@@ -6,7 +6,7 @@ import {
     MenuFoldOutlined,
   } from '@ant-design/icons';
  const { Header, Content } = Layout;
-export default function LayoutUT(props) {
+export default function LayoutDashboard(props) {
     const [isOpen, setIsOpen] = useState(false);
     return(
     <Layout style={{ minHeight: '100vh' }}>
