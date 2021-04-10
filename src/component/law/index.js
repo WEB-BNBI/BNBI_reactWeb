@@ -1,15 +1,11 @@
 import './lawpage.css';
 import PropTypes from 'prop-types';
-import {  Layout, Menu, Breadcrumb  } from 'antd';
-import {
-    DesktopOutlined,
-    PieChartOutlined,
-    FileOutlined,
-    TeamOutlined,
-    UserOutlined,
-  } from '@ant-design/icons';
-const { Header, Footer, Sider, Content } = Layout;
-const { SubMenu } = Menu;
+import {  Layout} from 'antd';
+import React from 'react';
+import StyleTree from "../utility/tree/tree.js"
+import StyleTalbe from "../utility/table/table.js"
+const { Sider, Content } = Layout;
+
 const Banner = ({title, description}) => {
     let squares = [];
   
@@ -55,39 +51,88 @@ Banner.propTypes = {
     title: PropTypes.string,
     description: PropTypes.string,
   };
-const menu = () =>{
-    return(
-    <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-    <Menu.Item key="1" icon={<PieChartOutlined />}>
-      Option 1
-    </Menu.Item>
-    <Menu.Item key="2" icon={<DesktopOutlined />}>
-      Option 2
-    </Menu.Item>
-    <SubMenu key="sub1" icon={<UserOutlined />} title="User">
-      <Menu.Item key="3">Tom</Menu.Item>
-      <Menu.Item key="4">Bill</Menu.Item>
-      <Menu.Item key="5">Alex</Menu.Item>
-    </SubMenu>
-    <SubMenu key="sub2" icon={<TeamOutlined />} title="Team">
-      <Menu.Item key="6">Team 1</Menu.Item>
-      <Menu.Item key="8">Team 2</Menu.Item>
-    </SubMenu>
-    <Menu.Item key="9" icon={<FileOutlined />}>
-      Files
-    </Menu.Item>
-  </Menu>
-    )
-}
-
+const treeData = [
+    {
+      title: '0-0',
+      key: '0-0',
+      children: [
+        {
+          title: '0-0-0',
+          key: '0-0-0',
+          children: [
+            {
+              title: '0-0-0-0',
+              key: '0-0-0-0',
+            },
+            {
+              title: '0-0-0-1',
+              key: '0-0-0-1',
+            },
+            {
+              title: '0-0-0-2',
+              key: '0-0-0-2',
+            },
+          ],
+        },
+        {
+          title: '0-0-1',
+          key: '0-0-1',
+          children: [
+            {
+              title: '0-0-1-0',
+              key: '0-0-1-0',
+            },
+            {
+              title: '0-0-1-1',
+              key: '0-0-1-1',
+            },
+            {
+              title: '0-0-1-2',
+              key: '0-0-1-2',
+            },
+          ],
+        },
+        {
+          title: '0-0-2',
+          key: '0-0-2',
+        },
+      ],
+    },
+    {
+      title: '0-1',
+      key: '0-1',
+      children: [
+        {
+          title: '0-1-0-0',
+          key: '0-1-0-0',
+        },
+        {
+          title: '0-1-0-1',
+          key: '0-1-0-1',
+        },
+        {
+          title: '0-1-0-2',
+          key: '0-1-0-2',
+        },
+      ],
+    },
+    {
+      title: '0-2',
+      key: '0-2',
+    },
+  ];
 
 const FirstPage = () => {
     return (
         <>
-        <Banner title='Title!' description="Description" />
-        <Layout>
-            <Sider>cccc</Sider>
-            <Content>Content</Content>
+        <Banner title='Titlesssss!' description="Description" />
+        <Layout style={{marginTop:"20px"}}>
+            <Sider>
+                <StyleTree treeData={treeData}/>
+            </Sider>
+            <Content>
+                <StyleTalbe/>
+            </Content>
         </Layout>
         </>
     )
