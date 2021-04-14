@@ -1,50 +1,14 @@
 .intro {
     position: relative;
-    height: 65vh;
+    height: 30vh;
     text-align: center;
     text-shadow: 1px 1px;
     color: #fff;
   }
   @media (min-width: 512px) {
     .intro {
-      height: 55vh;
+      height: 30vh;
     }
-  }
-  .intro .image-overlay {
-    display: block;
-    position: absolute;
-    bottom: 0;
-    opacity: 0.3;
-    background-color: #000;
-    width: 100%;
-    height: 100%;
-    top: 0;
-  }
-  .intro .squares-wrapper {
-    background: #4e54c8;
-    background: linear-gradient(to left, #3182d5, #4e54c8);
-    width: 100%;
-    height: 100%;
-  }
-  .intro .squares {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-  }
-  .intro .squares li {
-    position: absolute;
-    display: block;
-    list-style: none;
-    width: 20px;
-    height: 20px;
-    background: rgba(255, 255, 255, 0.2);
-    animation: animate 25s linear infinite;
-    bottom: -150px;
   }
   .quote {
     position: absolute;
@@ -66,16 +30,3 @@
       font-size: 3rem;
     }
   }
-  @keyframes animate {
-    0% {
-      transform: translateY(0) rotate(0deg);
-      opacity: 1;
-      border-radius: 0;
-    }
-    100% {
-      transform: translateY(-1000px) rotate(720deg);
-      opacity: 0;
-      border-radius: 50%;
-    }
-  }
-  
