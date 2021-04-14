@@ -4,46 +4,19 @@ import {  Layout} from 'antd';
 import React from 'react';
 import StyleTree from "../utility/tree/tree.js"
 import StyleTalbe from "../utility/table/table.js"
+import background from '../../image/LAW-01.jpg';
 const { Sider, Content } = Layout;
 
-const Banner = ({title, description}) => {
-    let squares = [];
-  
-    for (let i = 0; i < 20; i++) {
-      squares.push(i);
-    }
-    
-    const generateRandomNum = ({ min, max }) => Math.floor(Math.random() * (max - min + 1) + min);
-  
+const Banner = ({title, description}) => {  
     return (
-      <div className="intro">
+      <div className="intro" style={{backgroundImage: `url(${background})`,backgroundSize:"cover"}}>
         <div className="quote">
           <h1>{title}</h1>
           <p>{description}</p>
         </div>
-        <div className="squares-wrapper">
-          <ul className="squares">
-            {squares.map((el, i) => {
-              const randomDimensions = Math.floor(
-                Math.random() * (150 - 15 + 1) + 15
-              );
-  
-              return ( 
-                <li
-                  key={i}
-                  style={{
-                                      left: `${generateRandomNum({ min: 0, max: 90 })}%`,
-                                      width: randomDimensions,
-                                      height: randomDimensions,
-                                      animationDelay: `${i % 2 ? generateRandomNum({ min: 0, max: 20 }) : 0}s`,
-                                      animationDuration: `${generateRandomNum({ min: 10, max: 50 })}s`,
-                                  }}
-                />
-              );
-            })}
-          </ul>
+        <div >
+        {/* <img src={background} alt="Background" style={{maxWidth:"3508", height:'1792'}}/> */}
         </div>
-        <div className="image-overlay" />
       </div>
     );
   }; 
