@@ -4,18 +4,15 @@ import {  Layout} from 'antd';
 import React from 'react';
 import StyleTree from "../utility/tree/tree.js"
 import StyleTalbe from "../utility/table/table.js"
-import background from '../../image/LAW-01.svg';
+import background from '../../image/0415LAW-01.jpg';
 const { Sider, Content } = Layout;
 
 const StyleBanner = ({title, description}) => {  
     return (
-      <div className="intro" style={{backgroundImage: `url(${background})`,backgroundSize:"contain"}}>
+      <div className="intro" style={{backgroundImage: `url(${background})`,backgroundSize:"cover",backgroundRepeat:"no-repeat"}}>
         <div className="quote">
           <h1>{title}</h1>
           <p>{description}</p>
-        </div>
-        <div >
-        {/* <img src={background} alt="Background" style={{maxWidth:"3508", height:'1792'}}/> */}
         </div>
       </div>
     );
@@ -98,7 +95,7 @@ const treeData = [
 const FirstPage = () => {
     return (
         <>
-        <StyleBanner title='Titlesssss!' description="Description" />
+        <StyleBanner title='LAW' description="VERDICT" />
         <Layout style={{margin:"20px"}}>
             <Sider>
                 <StyleTree treeData={treeData}/>
