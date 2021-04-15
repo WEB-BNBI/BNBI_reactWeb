@@ -9,11 +9,12 @@ const { Sider, Content } = Layout;
 
 const StyleBanner = ({title, description}) => {  
     return (
-      <div className="intro" style={{backgroundImage: `url(${background})`,backgroundSize:"cover",backgroundRepeat:"no-repeat"}}>
-        <div className="quote">
+      <div>
+        <img src={background} alt="Background" style={{width:"100%"}}/>
+        {/* <div className="quote">
           <h1>{title}</h1>
           <p>{description}</p>
-        </div>
+        </div> */}
       </div>
     );
   }; 
@@ -95,7 +96,7 @@ const treeData = [
 const FirstPage = () => {
     return (
         <>
-        <StyleBanner title='LAW' description="VERDICT" />
+        <StyleBanner/>
         <Layout style={{margin:"20px"}}>
             <Sider>
                 <StyleTree treeData={treeData}/>
