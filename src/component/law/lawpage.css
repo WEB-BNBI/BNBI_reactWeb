@@ -1,3 +1,6 @@
+.lawSider , .lawContent{
+  background: #FFF !important;
+}
 .intro {
     display: flex;
     align-items: center;

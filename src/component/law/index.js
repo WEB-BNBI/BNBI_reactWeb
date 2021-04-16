@@ -97,11 +97,12 @@ const FirstPage = () => {
     return (
         <>
         <StyleBanner/>
+        <div>asdsadsad</div>
         <Layout style={{margin:"20px"}}>
-            <Sider>
+            <Sider className="lawSider">
                 <StyleTree treeData={treeData}/>
             </Sider>
-            <Content>
+            <Content className="lawContent">
                 <StyleTalbe/>
             </Content>
         </Layout>
