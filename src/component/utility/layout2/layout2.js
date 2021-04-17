@@ -6,9 +6,9 @@ const { Header, Footer, Content } = Layout;
 export default function Layout2(props) {
     return(
     <Layout>
-      <Header>Header</Header>
+      <Header className="lawHeader">BIBI LAW</Header>
       <Content>{props.menu}</Content>
-      <Footer>Footer</Footer>
+      <Footer className="lawFooter">Footer</Footer>
     </Layout>
     );
 }

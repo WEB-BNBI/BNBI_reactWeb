@@ -1,12 +1,11 @@
 import './lawpage.css';
-import PropTypes from 'prop-types';
-import {  Layout} from 'antd';
+import {  Layout,Input, Row, Col} from 'antd';
 import React from 'react';
 import StyleTree from "../utility/tree/tree.js"
 import StyleTalbe from "../utility/table/table.js"
 import background from '../../image/0415LAW-01.jpg';
 const { Sider, Content } = Layout;
-
+const { Search } = Input;
 const StyleBanner = ({title, description}) => {  
     return (
       <div>
@@ -18,10 +17,7 @@ const StyleBanner = ({title, description}) => {
       </div>
     );
   }; 
-  StyleBanner.propTypes = {
-    title: PropTypes.string,
-    description: PropTypes.string,
-  };
+
 const treeData = [
     {
       title: '0-0',
@@ -93,19 +89,28 @@ const treeData = [
     },
   ];
 
+const onSearch = value => console.log(value);
+
 const FirstPage = () => {
     return (
         <>
         <StyleBanner/>
-        <div>asdsadsad</div>
-        <Layout style={{margin:"20px"}}>
+        <Row style={{marginTop:"30px"}}>
+          <Col span={12}  push={6}>
+            <Search placeholder="input search text" onSearch={onSearch} />
+          </Col>
+        
+        <Col span={24}>
+        <Layout className="lawLayout">
             <Sider className="lawSider">
-                <StyleTree treeData={treeData}/>
+                <StyleTree className="lawTree" treeData={treeData}/>
             </Sider>
             <Content className="lawContent">
-                <StyleTalbe/>
+                <StyleTalbe className="lawTable"/>
             </Content>
         </Layout>
+        </Col>
+        </Row>
         </>
     )
 }

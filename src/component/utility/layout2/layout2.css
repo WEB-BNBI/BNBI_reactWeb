@@ -1,22 +1,16 @@
-.code-box-demo {
+  .code-box-demo {
     text-align: center;
   }
-  .ant-layout-header,.ant-layout-footer {
+  .lawHeader , .lawFooter {
     color: #fff;
     background: #000 !important;
   }
-  .ant-layout-footer {
+  .lawFooter {
     line-height: 1.5;
-  }
-  .ant-layout-sider {
-    color: #fff;
-    line-height: 120px;
-    background: #3d524b;
   }
   .ant-layout-content {
     min-height: 120px;
     color: #fff;
-    line-height: 120px;
     background: #3d524b;
   }
 

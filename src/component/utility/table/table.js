@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import 'antd/dist/antd.css';
 import './table.css';
 import { Table } from 'antd';
@@ -11,15 +10,11 @@ const columns = [
     dataIndex: 'name',
     sorter: true,
     render: name => `${name.first} ${name.last}`,
-    width: '20%',
+    width: '20%'
   },
   {
     title: 'Gender',
     dataIndex: 'gender',
-    filters: [
-      { text: 'Male', value: 'male' },
-      { text: 'Female', value: 'female' },
-    ],
     width: '20%',
   },
   {
@@ -35,6 +30,9 @@ const getRandomuserParams = params => ({
 });
 
 class App extends React.Component {
+  constructor(props) { // 加入建構子以及props參數
+    super(props);
+}
   state = {
     data: [],
     pagination: {
@@ -82,6 +80,7 @@ class App extends React.Component {
 
   render() {
     const { data, pagination, loading } = this.state;
+    const { className } = this.props;
     return (
       <Table
         columns={columns}
@@ -90,6 +89,7 @@ class App extends React.Component {
         pagination={pagination}
         loading={loading}
         onChange={this.handleTableChange}
+        className={this.props.className}
       />
     );
   }

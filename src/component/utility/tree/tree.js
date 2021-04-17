@@ -39,6 +39,7 @@ const Demo = (props) => {
       onSelect={onSelect}
       selectedKeys={selectedKeys}
       treeData={props.treeData}
+      className={props.className}
     />
   );
 };

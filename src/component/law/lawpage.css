@@ -1,35 +1,27 @@
-.lawSider , .lawContent{
-  background: #FFF !important;
+.lawLayout{
+  margin-top:30px;
+  background:#3d524b;
+  margin-bottom: 50px;
+  margin-right: 15px;
+  margin-left: 15px;
 }
-.intro {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    height: 50vh;
-    text-align: center;
-    text-shadow: 1px 1px;
-    color: #fff;
+.lawSider{
+    background: #FFF !important;
+    box-shadow:3px 3px 5px 6px #000;
+    border-radius:15px;
   }
+.lawContent{
+    background: #FFF !important;
+    margin-left: 20px;
+    box-shadow:3px 3px 5px 6px #000;
+    border-radius:15px;
+  }
+.lawSearchInput{
+}
+.lawTree{
+  border-radius:15px !important;
+}
+.lawTable{
+  margin-top:12px;
+}
 
-  .quote {
-    /* position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 200%;
-    overflow: hidden;
-    width:100%;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
-    z-index: 1; */
-  }
-  .quote h1 {
-    margin: 0;
-    font-size: 8rem;
-    color : #4d4d4d;
-  }
-  .quote p {
-    margin: 0;
-    font-size: 3rem;
-    color : #896653;
-  }
