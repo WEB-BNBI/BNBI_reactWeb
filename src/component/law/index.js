@@ -1,9 +1,10 @@
 import './lawpage.css';
 import {  Layout,Input, Row, Col} from 'antd';
-import React from 'react';
+import React , { useState,useEffect }from 'react';
 import StyleTree from "../utility/tree/tree.js"
 import StyleTalbe from "../utility/table/table.js"
 import background from '../../image/0415LAW-01.jpg';
+import {fetchData} from "../utility/API/lawApi.js"
 const { Sider, Content } = Layout;
 const { Search } = Input;
 const StyleBanner = ({title, description}) => {  
@@ -91,7 +92,20 @@ const treeData = [
 
 const onSearch = value => console.log(value);
 
+
 const FirstPage = () => {
+  
+
+const [data,setData] = useState([])
+
+useEffect(() => {
+  (async()=>{
+    const res = await fetchData()
+    setData(res)
+  })()
+  
+}, []);
+
     return (
         <>
         <StyleBanner/>
@@ -106,7 +120,7 @@ const FirstPage = () => {
                 <StyleTree className="lawTree" treeData={treeData}/>
             </Sider>
             <Content className="lawContent">
-                <StyleTalbe className="lawTable"/>
+                <StyleTalbe className="lawTable" tabledata={data}/>
             </Content>
         </Layout>
         </Col>
