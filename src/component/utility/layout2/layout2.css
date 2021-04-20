@@ -1,9 +1,12 @@
   .code-box-demo {
     text-align: center;
   }
-  .lawHeader , .lawFooter {
+  .lawHeader {
     color: #fff;
-    background: #000 !important;
+    background: linear-gradient(#222e2a,#65887c);
+  }
+  .lawFooter {
+    background: linear-gradient(#65887c,#222e2a);
   }
   .lawFooter {
     line-height: 1.5;
@@ -11,7 +14,7 @@
   .ant-layout-content {
     min-height: 120px;
     color: #fff;
-    background: #3d524b;
+    background: #65887c;
   }
 
   .code-box-demo > .ant-layout + .ant-layout {

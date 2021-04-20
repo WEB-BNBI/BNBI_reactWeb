@@ -31,7 +31,7 @@ const columns = [
 const App = (props) => {
 
   return(
-    <Table columns={columns} dataSource={props.tabledata} />
+    <Table className={props.className} columns={columns} dataSource={props.tabledata} />
   )
 }
 
