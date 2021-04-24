@@ -106,6 +106,30 @@ useEffect(() => {
   
 }, []);
 
+const columns = [
+  {
+    title: 'area',
+    dataIndex: 'area',
+    key: 'area',
+    render: text => <a>{text}</a>,
+  },
+  {
+    title: 'conclusion',
+    dataIndex: 'conclusion',
+    key: 'conclusion',
+  },
+  {
+    title: 'datetime',
+    dataIndex: 'datetime',
+    key: 'datetime',
+  },
+  {
+    title: 'participants',
+    key: 'participants',
+    dataIndex: 'participants'
+  }
+];
+
     return (
         <>
         <StyleBanner/>
@@ -120,7 +144,7 @@ useEffect(() => {
                 <StyleTree className="lawTree" treeData={treeData}/>
             </Sider>
             <Content className="lawContent">
-                <StyleTalbe className="lawTable" tabledata={data}/>
+                <StyleTalbe className="lawTable" columns={columns} tabledata={data}/>
             </Content>
         </Layout>
         </Col>
