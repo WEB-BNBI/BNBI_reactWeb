@@ -90,21 +90,23 @@ const treeData = [
     },
   ];
 
-const onSearch = value => console.log(value);
+
 
 
 const FirstPage = () => {
   
-
 const [data,setData] = useState([])
+const [keyword,setKeyword] = useState("")
+const onSearch = value => setKeyword(value);
+  
 
 useEffect(() => {
   (async()=>{
-    const res = await fetchData()
+    const url="/law/getVerdictList/"+keyword
+    const res = await fetchData(url)
     setData(res)
   })()
-  
-}, []);
+}, [keyword]);
 
 const columns = [
   {
